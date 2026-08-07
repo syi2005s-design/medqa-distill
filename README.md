@@ -58,7 +58,7 @@
 ### 1. 安装
 
 ```bash
-git clone https://github.com/<your-username>/medqa-distill.git
+git clone https://github.com/syi2005s-design/medqa-distill.git
 cd medqa-distill
 pip install -r requirements.txt
 ```
@@ -227,9 +227,9 @@ medqa-distill/
 ```bibtex
 @software{medqa-distill,
   title = {MedQA-Distill: Medical QA Distillation Toolkit},
-  author = {Your Name},
+  author = {Syi2005s Design},
   year = {2026},
-  url = {https://github.com/<your-username>/medqa-distill}
+  url = {https://github.com/syi2005s-design/medqa-distill}
 }
 ```
 
@@ -240,11 +240,11 @@ medqa-distill/
 训练数据托管在 HuggingFace Hub，GitHub 仓库只含代码：
 
 ```
-https://huggingface.co/datasets/<your-username>/medqa-distill-sft
+https://huggingface.co/datasets/syi2005s-design/medqa-distill-sft
 ```
 
 ```python
 from datasets import load_dataset
-ds = load_dataset("<your-username>/medqa-distill-sft")
+ds = load_dataset("syi2005s-design/medqa-distill-sft")
 print(ds["train"][0]["instruction"])
 ```
