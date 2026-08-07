@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environment
+venv/
+.venv/
+env/
+.conda/
+conda/
+
+# Environment variables (keep .env.example, not .env)
+.env
+.env.local
+.env.production
+!.env.example
+
+# Data (large files)
+data/sft/
+data/*.jsonl
+data/split/
+data/split2/
+output/
+*.zip
+*.tar.gz
+
+# Runtime temp
+.progress_notified
+*.lockdir/
+*.done
+*.pid
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Scripts temp
+*.lockdir/
+*.done
+*.pid
+
+# Model weights
+output/model/
+*.bin
+*.safetensors
+*.gguf

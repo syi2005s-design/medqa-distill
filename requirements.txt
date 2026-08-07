@@ -1,0 +1,13 @@
+# 蒸馏（数据预处理）
+openai>=1.0.0
+httpx>=0.24.0
+tiktoken>=0.6.0
+requests>=2.31.0
+tqdm>=4.66.0
+
+# 训练（需要 GPU，可选）
+torch>=2.0.0
+transformers>=4.37.0
+peft>=0.8.0
+accelerate>=0.26.0
+datasets>=2.14.0
