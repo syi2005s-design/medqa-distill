@@ -49,7 +49,7 @@
 }
 ```
 
-> 📦 **数据集下载**：数据文件较大（~70MB），托管在 HuggingFace Hub，见 [数据集说明](#数据集-huggingface)。
+> 📦 **数据集下载**：https://huggingface.co/datasets/rewrewrv343/medqa-distill-sft
 
 ---
 
@@ -237,14 +237,14 @@ medqa-distill/
 
 ## 📦 数据集 (HuggingFace)
 
-训练数据托管在 HuggingFace Hub，GitHub 仓库只含代码：
+训练数据托管在 HuggingFace Hub，可直接用 `datasets` 库加载：
 
 ```
-https://huggingface.co/datasets/syi2005s-design/medqa-distill-sft
+https://huggingface.co/datasets/rewrewrv343/medqa-distill-sft
 ```
 
 ```python
 from datasets import load_dataset
-ds = load_dataset("syi2005s-design/medqa-distill-sft")
+ds = load_dataset("rewrewrv343/medqa-distill-sft")
 print(ds["train"][0]["instruction"])
 ```
