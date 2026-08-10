@@ -22,11 +22,35 @@ metadata:
 
 ## 工作流（4 步）
 
+### 0. 原始数据（data_clean 目录结构）
+```
+E:/skill/data_clean/
+├── questions/              # MedQA 题库（~136MB）
+│   ├── US/                 # 美国医学执照考试（USMLE，A-E 五选项）
+│   │   ├── train.jsonl     # 10,178 题
+│   │   ├── dev.jsonl       # 1,272 题
+│   │   ├── test.jsonl      # 1,273 题
+│   │   └── 4_options/      # 4 选项版（推荐 SFT 用）
+│   ├── Mainland/           # 中国执业医师考试（A-E 五选项）
+│   │   ├── train.jsonl     # 27,400 题
+│   │   ├── dev.jsonl       # 3,425 题
+│   │   ├── test.jsonl      # 3,426 题
+│   │   └── 4_options/      # 4 选项版
+│   └── Taiwan/             # 台湾医学考试
+│       ├── train/dev/test.jsonl
+│       └── tw_translated_jsonl/  # 中英文翻译版
+├── textbooks/              # 医学教材（~239MB，用于 Self-Instruct 知识增强）
+│   ├── en/                 # 英文教材
+│   ├── zh_paragraph/       # 中文段落
+│   └── zh_sentence/        # 中文句子
+```
+
 ### 1. 数据转换（MedQA data_clean → 蒸馏输入）
 ```bash
-python medqa_to_input.py   # 输出 {"id","question","A".."E","answer"} JSONL 到 data/
+# 自动识别 US/Mainland 格式，输出 A-E 五选项 JSONL
+python medqa_to_input.py --input-dir E:/skill/data_clean --output-dir data
+# 输出：data/us4_train.jsonl, data/zh_train.jsonl, data/*_dev.jsonl, data/*_test.jsonl
 ```
-注意：MedQA 美/中原始题均为 **A–E 五选项**；`4_options/` 下有 4 选项版（推荐 SFT 用）。
 
 ### 2. API 蒸馏（核心）
 ```bash
