@@ -237,7 +237,7 @@ medqa-distill/
 
 ## 📦 数据集 (HuggingFace)
 
-训练数据托管在 HuggingFace Hub，可直接用 `datasets` 库加载：
+训练数据托管在 HuggingFace Hub，GitHub 仓库只含代码：
 
 ```
 https://huggingface.co/datasets/rewrewrv343/medqa-distill-sft
