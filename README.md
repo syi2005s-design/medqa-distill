@@ -154,19 +154,22 @@ MedQA 等医学题库只有**题目 + 选项 + 答案字母**，没有推理过�
 
 ```
 medqa-distill/
-├── api_distill.py        # 蒸馏主脚本（并发/重试/续传/锁/解析/去重/统计）
-├── medqa_to_input.py     # MedQA → 蒸馏输入格式
-├── merge_all_data.py     # 合并所有蒸馏数据 → train/eval
-├── merge_token_data.py   # 合并新 provider 数据（自动识别 us/zh、补 answer）
-├── rebuild_done.py       # 从产出重建干净 done（剔除被污染条目）
-├── train_lora.py         # LoRA 微调 + MedQA 评测
-├── run_all.sh            # 多 Provider 依次试水
-├── run_train.sh          # 训练启动脚本
-├── requirements.txt      # 依赖
-├── .env.example          # API Key 配置模板
-├── data/                 # 输入数据（MedQA，不入库）
-├── data/sft/             # 训练数据（train/eval/merged_all，托管 HF）
-└── output/               # 蒸馏产出（不入库）
+├── api_distill.py              # 蒸馏主脚本（并发/重试/续传/锁/解析/去重/统计）
+├── clinical-assistant/         # 临床医学助手 🩺
+│   ├── SKILL.md                # 完整技能说明
+│   └── clinical_assistant.py   # CLI 命令行工具
+├── medqa_to_input.py           # MedQA → 蒸馏输入格式
+├── merge_all_data.py           # 合并所有蒸馏数据 → train/eval
+├── merge_token_data.py         # 合并新 provider 数据（自动识别 us/zh、补 answer）
+├── rebuild_done.py             # 从产出重建干净 done（剔除被污染条目）
+├── train_lora.py               # LoRA 微调 + MedQA 评测
+├── run_all.sh                  # 多 Provider 依次试水
+├── run_train.sh                # 训练启动脚本
+├── requirements.txt            # 依赖
+├── .env.example                # API Key 配置模板
+├── data/                       # 输入数据（MedQA，不入库）
+├── data/sft/                   # 训练数据（train/eval/merged_all，托管 HF）
+└── output/                     # 蒸馏产出（不入库）
 ```
 
 ---
