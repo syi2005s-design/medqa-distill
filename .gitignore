@@ -60,3 +60,5 @@ output/model/
 *.safetensors
 *.gguf
 officecli.exe
+hf_dataset/*.jsonl
+hf_dataset/*.json
